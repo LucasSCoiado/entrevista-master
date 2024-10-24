@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: docker/php/DockerFile
+    container_name: entrevista-app
+    restart: always
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+      - ./viagem:/var/www/viagem
+    environment:
+      - COMPOSER_HOME=/composer
+      - COMPOSER_ALLOW_SUPERUSER=1
+      - APP_ENV=local
+      - APP_KEY=base64:e5d6XsaNub3Lb2gVXISpz3akXv2uGP2IemrIbS/jwd8=
+    depends_on:
+      - db
+      - redis
+
+  nginx:
+  
+    image: nginx:1.25.1-alpine-slim
+    container_name: entrevista-nginx
+    restart: always
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www
+      - ./viagem:/var/www/viagem
+      - ./docker/nginx:/etc/nginx/conf.d
+
+  redis:
+    build:
+      context: ./
+      dockerfile: docker/redis/DockerFile
+    container_name: entrevista-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis:/data
+
+  db:
+    build:
+      context: ./
+      dockerfile: docker/db/DockerFile
+    image: postgres
+    container_name: entrevista-postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=entrevista
+    ports:
+      - "5432:5432"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./storage/database:/var/lib/postgresql/data
+
+volumes:
+  redis:
+  postgres:
