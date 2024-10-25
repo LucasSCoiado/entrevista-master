@@ -4,16 +4,19 @@
 
 @section('content')
 
-<nav class="navbar navbar-expand-lg navbar-light">
-    <div class="collapse navbar-collapse" id="navbar-secondary">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="/register/driverRegister" class="nav-link register"> <ion-icon name="accessibility-outline"></ion-icon>
-                Cadastro Motoristas</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+
+<div id="navbar navbar-expand-lg navbar-light center">
+    <nav class="navbar-secondary navbar-expand-lg navbar-light">
+        <div class="collapse navbar-collapse" id="navbar-secondary">
+            <ul class="navbar-nav-secondary">
+                <li class="nav-item">
+                    <a href="/register/driverRegister" class="nav-link register"><ion-icon name="accessibility-outline"></ion-icon>
+                    Cadastro de motoristas</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
 
 <div id="data-container" class="col-md-12">
     <h1>Pagina de Motoristas</h1>

@@ -4,6 +4,19 @@
 
 @section('content')
 
+<div id="navbar navbar-expand-lg navbar-light center">
+    <nav class="navbar-secondary navbar-expand-lg navbar-light">
+        <div class="collapse navbar-collapse" id="navbar-secondary">
+            <ul class="navbar-nav-secondary">
+                <li class="nav-item">
+                    <a href="/register/vehicleRegister" class="nav-link register"><ion-icon name="car-outline"></ion-icon>
+                    Cadastro de veiculos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
 <div id="data-container" class="col-md-12">
     <h1>Veiculos</h1>
     <div id="cards-container" class="row">
