@@ -13,14 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('vehicle', function (Blueprint $table) {
-            $table->id();
-            $table->string('carModel');
-            $table->date('year');
-            $table->date('acquisition');
-            $table->float('kmDriven');
-            $table->integer('reinder');
-            $table->timestamps();
+        Schema::table('travel', function (Blueprint $table) {
+            $table->string('image');
         });
     }
 
@@ -31,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vehicle');
+        Schema::table('travel', function (Blueprint $table) {
+            $table->dropColumn('image');
+        });
     }
 };

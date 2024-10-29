@@ -16,7 +16,7 @@
     <div id="cards-container" class="row">
         @foreach ($drivers as $driver)
             <div class="card col-md-3">
-                <img src="/img/funcionario.png" alt="{{$driver->name}}">
+                <img src="/img/driver/{{$driver->image}}" alt="{{$driver->name}}">
                 <div class="card-body">
                     <h5 class="card-name">{{$driver->name}}</h5>
                     <p class="card-date">10/10/2024</p>
@@ -31,7 +31,7 @@
         <p class="subtitle">Veja as proximas viagens</p>
         @foreach ($travels as $travel)
                 <div class="card col-md-3">
-                    <img src="/img/viagem_onibus.avif" alt="{{$travel->km_fim}}">
+                    <img src="/img/travel/{{$travel->image}}" alt="{{$travel->km_fim}}">
                     <div class="card-body">
                         <h5 class="card-end">Km total {{$travel->km_fim}}</h5>
                         <p class="card-driver">Id motorista {{$travel->motorista_id}}</pc>
@@ -46,9 +46,9 @@
         <p class="subtitle">Veja nossos veiculos</p>
         @foreach ($vehicles as $vehicle)
             <div class="card col-md-3">
-                <img src="/img/scudo.jfif" alt="{{$vehicle->model}}">
+                <img src="/img/vehicle/{{$vehicle->image}}" alt="{{$vehicle->carModel}}">
                 <div class="card-body">
-                        <h5 class="card-model">{{$vehicle->model}}</h5>
+                        <h5 class="card-model">{{$vehicle->carModel}}</h5>
                         <p class="card-year">2017</p>
                         <a href="" class="btn btn-primary">Saber mais</a>
                     </div>

@@ -16,16 +16,26 @@
         </div>
     </nav>
 </div>
-
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            @if (session('msg'))
+                <p class="msg">{{session('msg')}}</p>
+            @endif
+            @yield('content')
+        </div>
+    </div>
+    
+</main>
 <div id="data-container" class="col-md-12">
     <h1>Veiculos</h1>
     <div id="cards-container" class="row">
         <h2>Veiculos</h2>
         @foreach ($vehicles as $vehicle)
             <div class="card col-md-3">
-                <img src="/img/scudo.jfif" alt="{{$vehicle->model}}">
+                <img src="/img/vehicle/{{$vehicle->image}}" alt="{{$vehicle->carModel}}">
                 <div class="card-body">
-                        <h5 class="card-model">{{$vehicle->model}}</h5>
+                        <h5 class="card-model">{{$vehicle->carModel}}</h5>
                         <p class="card-year">2017</p>
                         <a href="" class="btn btn-primary">Saber mais</a>
                     </div>

@@ -16,6 +16,17 @@
         </div>
     </nav>
 </div>
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            @if (session('msg'))
+                <p class="msg">{{session('msg')}}</p>
+            @endif
+            @yield('content')
+        </div>
+    </div>
+
+</main>    
 
 <div id="data-container" class="col-md-12">
     <h1>Pagina de Viagens</h1>
@@ -24,7 +35,7 @@
         <p class="subtitle">Veja as proximas viagens</p>
         @foreach ($travels as $travel)
             <div class="card col-md-3">
-                <img src="/img/viagem_onibus.avif" alt="{{$travel->km_fim}}">
+                <img src="/img/travel/{{$travel->image}}" alt="{{$travel->km_fim}}">
                 <div class="card-body">
                     <h5 class="card-end">Km total {{$travel->km_fim}}</h5>
                     <p class="card-driver">Id motorista {{$travel->motorista_id}}</pc>

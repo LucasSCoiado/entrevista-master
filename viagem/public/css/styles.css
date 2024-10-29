@@ -26,6 +26,7 @@ header{
 .btn-primary{
     background-color: #353e48;
     border: 2px, solid, #2b323a;
+    margin-top: 10px;
 }
 
 .btn-primary:hover{
@@ -33,7 +34,16 @@ header{
     border-color: #2b323a;
 }
 
-
+.msg{
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid#c3e6cb;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+    transition-duration: 3s ;
+}
 
 /*---navegação---*/
 
@@ -55,7 +65,12 @@ header{
 
 
 #navbar a:hover{
-    color:#353e48;
+    color:#fff;
+    transition-delay: 250ms;
+    transition-property: color;
+    transition-duration: 250ms;
+    background-color: #5e5c5c;
+    transition-behavior: 250ms;
 }
 
 
@@ -80,15 +95,18 @@ ul.navbar-nav li{
     align-items: center;
 }
 
+
 #navbar-secondary a{
     font-size: 15px;
     color: #fff;
 }
 
 #navbar-secondary a:hover{
-    
     color: #131313;
     background-color: #757575;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-behavior: 250ms;
 }
 
 ul.navbar-secondary{
@@ -153,11 +171,11 @@ ul.navbar-nav-secondary li{
 }
 
 #data-container .card{
-    flex: 1 1 0;
+    flex: 1 1 24%;
     max-width: 25%;
     border-radius: 10px;
     padding: 0;
-    margin: 5px;
+    margin: .5%;
 }
 
 #data-container img{
@@ -177,6 +195,25 @@ ul.navbar-nav-secondary li{
     font-weight: bold;
     margin-bottom: 30px;
 }    
+/*---Event create page---*/
+#travels-create-container{
+    padding: 30px;
+}
+
+#travels-create-container label{
+    font-weight: bold;
+    margin: 5px;
+}
+
+#travels-create-container input,
+#travels-create-container select,
+#travels-create-container textarea{
+    font-size: 12px;
+} 
+
+.form-group{
+    margin: 10px 0;
+}
 
 /*---Footer---*/
 footer{

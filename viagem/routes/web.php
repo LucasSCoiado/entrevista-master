@@ -22,3 +22,6 @@ Route::get('/veiculo', [TravelController::class, 'vehicle']);
 Route::get('/register/travelRegister', [TravelController::class, 'travelRegister']);
 Route::get('/register/driverRegister', [TravelController::class, 'driverRegister']);
 Route::get('/register/vehicleRegister', [TravelController::class, 'vehicleRegister']);
+Route::post('/register', [TravelController::class, 'storeVehicle']);
+Route::post('/drivers', [TravelController::class, 'store']);
+Route::post('/travels', [TravelController::class, 'storeTravel']);

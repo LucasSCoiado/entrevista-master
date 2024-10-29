@@ -14,13 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('vehicle', function (Blueprint $table) {
-            $table->id();
-            $table->string('carModel');
-            $table->date('year');
-            $table->date('acquisition');
-            $table->float('kmDriven');
-            $table->integer('reinder');
-            $table->timestamps();
+            $table->string('model');
         });
     }
 
@@ -31,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vehicle');
+        Schema::dropIfExists('model');
     }
 };
