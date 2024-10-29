@@ -63,7 +63,7 @@ class TravelController extends Controller
         
             $imageName = md5($requestImage->getClientOriginalName().strtotime("now")).".".$extension;
         
-            $requestImage->move(public_path('img/driver'), $imageName);
+            $requestImage->move(public_path('/img/driver'), $imageName);
         
             $register->image = $imageName;
         }
@@ -87,7 +87,7 @@ class TravelController extends Controller
 
             $imageName = md5($requestImage->getClientOriginalName().strtotime("now")).".".$extension;
 
-            $requestImage->move(public_path('img/vehicle'), $imageName);
+            $requestImage->move(public_path('/img/vehicle'), $imageName);
 
             $register->image = $imageName;
         }
@@ -115,7 +115,7 @@ class TravelController extends Controller
             
             $imageName = md5($requestImage->getClientOriginalName().strtotime("now")).".".$extension;
 
-            $requestImage->move(public_path('img/travel'), $imageName);
+            $requestImage->move(public_path('/img/travel'), $imageName);
 
             $register->image = $imageName;
         }
@@ -123,6 +123,11 @@ class TravelController extends Controller
         $register->save();
 
         return redirect('/viagem')->with('msg', 'Viagem cadastrada com sucesso!');
+    }
+
+    public function driverShow($id){
+        $driver = Driver::findOrFail($id);
+        return view('register.driverShow', ['driver' => $driver]);
     }
 
 }

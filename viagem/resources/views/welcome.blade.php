@@ -21,7 +21,7 @@
                     <h5 class="card-name">{{$driver->name}}</h5>
                     <p class="card-date">10/10/2024</p>
                     <p class="card-cnh">{{$driver->cnh}}</p>
-                    <a href="" class="btn btn-primary">Saber mais</a>
+                    <a href="/register/{{$driver->id}}" class="btn btn-primary">Saber mais</a>
                 </div>
             </div>
         @endforeach
@@ -36,7 +36,7 @@
                         <h5 class="card-end">Km total {{$travel->km_fim}}</h5>
                         <p class="card-driver">Id motorista {{$travel->motorista_id}}</pc>
                         <p class="card-car">Id Veiculo {{$travel->veiculo_id}}</p>
-                        <a href="" class="btn btn-primary">Saber mais</a>
+                        <a href="/register/{{$travel->id}}" class="btn btn-primary">Saber mais</a>
                     </div>
                 </div>
             @endforeach
@@ -50,7 +50,7 @@
                 <div class="card-body">
                         <h5 class="card-model">{{$vehicle->carModel}}</h5>
                         <p class="card-year">2017</p>
-                        <a href="" class="btn btn-primary">Saber mais</a>
+                        <a href="/register/{{$vehicle->id}}" class="btn btn-primary">Saber mais</a>
                     </div>
                 </div>
         @endforeach

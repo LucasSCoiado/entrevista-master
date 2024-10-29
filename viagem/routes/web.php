@@ -15,13 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TravelController;
 
-Route::get('/', [TravelController::class, 'index']);
+//GET
+Route::get('/', [TravelController::class, 'index']);//mostrar todos os registros
 Route::get('/motorista', [TravelController::class, 'driver']);
 Route::get('/viagem', [TravelController::class, 'trip']);
 Route::get('/veiculo', [TravelController::class, 'vehicle']);
-Route::get('/register/travelRegister', [TravelController::class, 'travelRegister']);
-Route::get('/register/driverRegister', [TravelController::class, 'driverRegister']);
-Route::get('/register/vehicleRegister', [TravelController::class, 'vehicleRegister']);
-Route::post('/register', [TravelController::class, 'storeVehicle']);
-Route::post('/drivers', [TravelController::class, 'store']);
-Route::post('/travels', [TravelController::class, 'storeTravel']);
+Route::get('register/{id}', [TravelController::class, 'driverShow']); // mostrar dados expecificos
+Route::get('/register/travelRegister', [TravelController::class, 'travelRegister']);//formulario de cadastro no banco
+Route::get('/register/driverRegister', [TravelController::class, 'driverRegister']);//formulario de cadastro no banco
+Route::get('/register/vehicleRegister', [TravelController::class, 'vehicleRegister']);//formulario de cadastro no banco
+
+//POST
+Route::post('/register', [TravelController::class, 'storeVehicle']);//enviar dados ao banco
+Route::post('/drivers', [TravelController::class, 'store']);//enviar dados ao banco
+Route::post('/travels', [TravelController::class, 'storeTravel']);//enviar dados ao banco
