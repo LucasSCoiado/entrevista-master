@@ -25,6 +25,9 @@
                 </div>
             </div>
         @endforeach
+        @if (count($driver) == 0)
+            <p>Estamos sem motoristas</p>
+        @endif
     </div>
     <div id="cards-container" class="row">
         <h2>Proximas viagens</h2>
