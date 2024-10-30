@@ -7,9 +7,9 @@ services:
       dockerfile: docker/php/DockerFile
     container_name: entrevista-app
     restart: always
-    working_dir: /var/www/
+    working_dir: /var/www/viagem
     volumes:
-      - ./:/var/www
+      - ./:/var/www/viagem
       - ./viagem:/var/www/viagem
     environment:
       - COMPOSER_HOME=/composer
