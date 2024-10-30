@@ -17,11 +17,11 @@ class TravelController extends Controller
         $travels = Travel::all();
         return view('welcome', ['drivers'=>$drivers, 'travels'=>$travels,'vehicles'=>$vehicles]);
     }
-
     public function vehicle(){
         $vehicles = Vehicles::all();
         return view('vehicle', ['vehicles'=>$vehicles]);
     }
+
 
     public function trip(){
         $travels = Travel::all();
@@ -30,8 +30,6 @@ class TravelController extends Controller
 
     public function driver(){
         $drivers= Driver::all();      
-        
-
         return view('driver',['drivers'=>$drivers]);
     }
 
@@ -103,6 +101,8 @@ class TravelController extends Controller
 
         $register->km_inicio = $request->km_inicio;
         $register->km_fim = $request->km_fim;
+        $register->origem = $request->origem;
+        $register->destino = $request->destino;
         $register->motorista_id = $request->motorista_id;
         $register->veiculo_id = $request->motorista_id;
 
@@ -127,7 +127,17 @@ class TravelController extends Controller
 
     public function driverShow($id){
         $driver = Driver::findOrFail($id);
-        return view('register.driverShow', ['driver' => $driver]);
+        return view('show.driverShow', ['driver' => $driver]);
+    }
+
+    public function travelShow($id){
+        $travel = Travel::findOrFail($id);
+        return view('show.travelShow', ['travel' => $travel]);
+    }
+
+    public function vehicleShow($id){
+        $vehicle = Vehicles::findOrFail($id);
+        return view('show.vehicleShow', ['vehicle'=> $vehicle]);
     }
 
 }
