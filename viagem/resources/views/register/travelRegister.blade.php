@@ -17,6 +17,14 @@
             <input type="number" class="form-control" placeholder="ID do veiculo..." name="veiculo_id" id="veiculo_id">
         </div>
         <div class="form-group">
+            <label for="veiculo_id">Origem</label>
+            <input type="text" class="form-control" placeholder="Cidade de origem..." name="origem" id="origem">
+        </div>
+        <div class="form-group">
+            <label for="veiculo_id">Destino</label>
+            <input type="text" class="form-control" placeholder="Cidade de destino..." name="destino" id="destino">
+        </div>
+        <div class="form-group">
             <label for="km_inicio">Km de inicio da viagem</label>
             <input type="number" class="form-control" placeholder="Distancia de inicio..." name="km_inicio" id="km_inicio">
         </div>

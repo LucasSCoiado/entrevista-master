@@ -38,10 +38,13 @@
                     <h5 class="card-name">{{$driver->name}}</h5>
                     <p class="card-date">10/10/2024</p>
                     <p class="card-cnh">{{$driver->cnh}}</p>
-                    <a href="" class="btn btn-primary">Saber mais</a>
+                    <a href="/driverShow/{{$driver->id}}" class="btn btn-primary">Saber mais</a>
                 </div>
             </div>
         @endforeach
+        @if (count($driver) == 0)
+            <p>Estamos sem motoristas</p>
+        @endif
     </div>
 </div>
 @endsection

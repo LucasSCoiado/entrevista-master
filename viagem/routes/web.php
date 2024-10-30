@@ -20,7 +20,9 @@ Route::get('/', [TravelController::class, 'index']);//mostrar todos os registros
 Route::get('/motorista', [TravelController::class, 'driver']);
 Route::get('/viagem', [TravelController::class, 'trip']);
 Route::get('/veiculo', [TravelController::class, 'vehicle']);
-Route::get('register/{id}', [TravelController::class, 'driverShow']); // mostrar dados expecificos
+Route::get('/driverShow/{id}', [TravelController::class, 'driverShow']); // mostrar dados expecificos
+Route::get('/travelShow/{id}', [TravelController::class, 'travelShow']); // mostrar dados expecificos
+Route::get('/vehicleShow/{id}', [TravelController::class, 'vehicleShow']); // mostrar dados expecificos
 Route::get('/register/travelRegister', [TravelController::class, 'travelRegister']);//formulario de cadastro no banco
 Route::get('/register/driverRegister', [TravelController::class, 'driverRegister']);//formulario de cadastro no banco
 Route::get('/register/vehicleRegister', [TravelController::class, 'vehicleRegister']);//formulario de cadastro no banco

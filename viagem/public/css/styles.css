@@ -58,11 +58,11 @@ header{
     padding: 5px 0;
 }
 
+
 #navbar a {
     font-size: 20px;
     color: #757575;
 }
-
 
 #navbar a:hover{
     color:#fff;
@@ -71,8 +71,8 @@ header{
     transition-duration: 250ms;
     background-color: #5e5c5c;
     transition-behavior: 250ms;
+    border-radius: 10px;
 }
-
 
 ul.nav-bar{
     list-style:none;
@@ -107,6 +107,7 @@ ul.navbar-nav li{
     transition-property: color;
     transition-duration: 250ms;
     transition-behavior: 250ms;
+    border-radius: 10px;
 }
 
 ul.navbar-secondary{
@@ -215,7 +216,7 @@ ul.navbar-nav-secondary li{
     margin: 10px 0;
 }
 
-/*---Dados motorista---*/
+/*---Dados motorista-veiculos-viagem---*/
 
 #image-container,
 #info-container{
@@ -227,7 +228,7 @@ ul.navbar-nav-secondary li{
 }
 
 #info-container h1{
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 900;
 }
 
@@ -241,6 +242,10 @@ ul.navbar-nav-secondary li{
     font-size:20px;
     color: #2b323a;
     margin-right: 5px;
+}
+
+#image-container img{
+    border-radius: 10px;
 }
 
 /*---Footer---*/

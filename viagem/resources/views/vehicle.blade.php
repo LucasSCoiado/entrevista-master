@@ -37,7 +37,7 @@
                 <div class="card-body">
                         <h5 class="card-model">{{$vehicle->carModel}}</h5>
                         <p class="card-year">2017</p>
-                        <a href="" class="btn btn-primary">Saber mais</a>
+                        <a href="/vehicleShow/{{$vehicle->id}}" class="btn btn-primary">Saber mais</a>
                     </div>
                 </div>
         @endforeach

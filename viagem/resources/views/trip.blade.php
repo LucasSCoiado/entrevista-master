@@ -40,7 +40,7 @@
                     <h5 class="card-end">Km total {{$travel->km_fim}}</h5>
                     <p class="card-driver">Id motorista {{$travel->motorista_id}}</pc>
                     <p class="card-car">Id Veiculo {{$travel->veiculo_id}}</p>
-                    <a href="" class="btn btn-primary">Saber mais</a>
+                    <a href="/travelShow/{{$travel->id}}" class="btn btn-primary">Saber mais</a>
                 </div>
             </div>
         @endforeach
