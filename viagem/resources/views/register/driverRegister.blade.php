@@ -6,6 +6,9 @@
 
 <div id="travels-create-container" class="col-md-6 offset-md-3">
     <h1>Cadastre o motorista</h1>
+    @if (session('msg-negative'))
+        <p class="msg-negative">{{session('msg-negative')}}</p>
+    @endif
     <form action="/drivers" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Vehicles;
 use App\Models\Driver;
 use App\Models\Travel;
+use Carbon\Carbon;
 
 class TravelController extends Controller
 {
@@ -50,10 +51,16 @@ class TravelController extends Controller
 
         $register->name = $request->name;
         $register->birth = $request->birth;
-        $register->cnh = $request->cnh;
-        $register->save();
 
-                //image upload
+        $now = Carbon::now();
+
+        $diff = $now->diffInYears($request->birth);
+        if($diff<18){
+            return redirect('/register/driverRegister')->with('msg-negative','Menor de idade');
+        }
+
+        $register->cnh = $request->cnh;
+        //image upload
         if($request->hasFile('image') && $request->file('image')->isValid()){
             $requestImage = $request->image;
         
@@ -66,6 +73,7 @@ class TravelController extends Controller
             $register->image = $imageName;
         }
 
+        $register->save();
         return redirect('/motorista')->with('msg', 'Motorista cadastrado com sucesso!');
     }
     public function storeVehicle(Request $request){

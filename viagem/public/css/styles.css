@@ -45,6 +45,17 @@ header{
     transition-duration: 3s ;
 }
 
+.msg-negative{
+    background-color: #cc1100;
+    color: #ffff;
+    border: 1px solid#cc1100;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+    transition-duration: 3s ;
+}
+
 /*---navegação---*/
 
 
