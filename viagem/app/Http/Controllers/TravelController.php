@@ -50,8 +50,14 @@ class TravelController extends Controller
         $register = new Driver();
 
         $register->name = $request->name;
-        $register->birth = $request->birth;
+        if($request->name == ''){
+            return redirect('/register/driverRegister')->with('msg-negative', 'Valores não informados');
+        }
 
+        $register->birth = $request->birth;
+        if($request->birth == ''){
+            return redirect('/register/driverRegister')->with('msg-negative', 'Valores não informados');
+        }
         $now = Carbon::now();
 
         $diff = $now->diffInYears($request->birth);
@@ -60,6 +66,9 @@ class TravelController extends Controller
         }
 
         $register->cnh = $request->cnh;
+        if($request->cnh == ''){
+            return redirect('/register/driverRegister')->with('msg-negative', 'Valores não informados');
+        }
         //image upload
         if($request->hasFile('image') && $request->file('image')->isValid()){
             $requestImage = $request->image;
@@ -80,11 +89,25 @@ class TravelController extends Controller
         $register = new Vehicles;
 
         $register->carModel = $request->carModel;
+        if($request->carModel == ''){
+            return redirect('/register/vehicleRegister')->with('msg-negative', 'Valores não informados');
+        }
         $register->year = $request->year;
+        if($request->year == ''){
+            return redirect('/register/vehicleRegister')->with('msg-negative', 'Valores não informados');
+        }
         $register->acquisition = $request->acquisition;
+        if($request->acquisition == ''){
+            return redirect('/register/vehicleRegister')->with('msg-negative', 'Valores não informados');
+        }
         $register->kmDriven = $request->kmDriven;
+        if($request->kmDriven == ''){
+            return redirect('/register/vehicleRegister')->with('msg-negative', 'Valores não informados');
+        }
         $register->reinder = $request->reinder;
-
+        if($request->reinder == ''){
+            return redirect('/register/vehicleRegister')->with('msg-negative', 'Valores não informados');
+        }
         //image upload
         if($request->hasFile('image') && $request->file('image')->isValid()){
             $requestImage = $request->image;
@@ -108,12 +131,29 @@ class TravelController extends Controller
         $register = new Travel;
 
         $register->km_inicio = $request->km_inicio;
+        if($request->km_inicio == ''){
+            return redirect('/register/travelRegister')->with('msg-negative', 'Valores não informados');
+        }
         $register->km_fim = $request->km_fim;
+        if($request->km_fim == ''){
+            return redirect('/register/travelRegister')->with('msg-negative', 'Valores não informados');
+        }
         $register->origem = $request->origem;
+        if($request->origem == ''){
+            return redirect('/register/travelRegister')->with('msg-negative', 'Valores não informados');
+        }
         $register->destino = $request->destino;
+        if($request->destino == ''){
+            return redirect('/register/travelRegister')->with('msg-negative', 'Valores não informados');
+        }
         $register->motorista_id = $request->motorista_id;
+        if($request->motorista_id == ''){
+            return redirect('/register/travelRegister')->with('msg-negative', 'Valores não informados');
+        }
         $register->veiculo_id = $request->motorista_id;
-
+        if($request->veiculo_id == ''){
+            return redirect('/register/travelRegister')->with('msg-negative', 'Valores não informados');
+        }
         //image Upload
         if($request->hasFile('image') && $request->file('image')->isValid()){
 
