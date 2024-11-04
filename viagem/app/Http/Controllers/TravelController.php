@@ -123,7 +123,7 @@ class TravelController extends Controller
 
         $register->save();
 
-        return redirect('/veiculo')->wirh('msg', 'Veículo cadastrado com sucesso!');
+        return redirect('/veiculo')->with('msg', 'Veículo cadastrado com sucesso!');
 
     }
 
@@ -157,7 +157,7 @@ class TravelController extends Controller
         //image Upload
         if($request->hasFile('image') && $request->file('image')->isValid()){
 
-            $requestImage = $request->image;
+            $requestImage = $request->imagem;
 
             $extension = $requestImage->extension();
             
@@ -165,7 +165,7 @@ class TravelController extends Controller
 
             $requestImage->move(public_path('/img/travel'), $imageName);
 
-            $register->image = $imageName;
+            $register->imagem = $imageName;
         }
 
         $register->save();

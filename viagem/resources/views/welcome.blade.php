@@ -46,7 +46,7 @@
         <p class="subtitle">Veja nossos veiculos</p>
         @foreach ($vehicles as $vehicle)
             <div class="card col-md-3">
-                <img src="/img/vehicle/{{$vehicle->image}}" alt="{{$vehicle->carModel}}">
+                <img src="/img/vehicle/{{$vehicle->imagem}}" alt="{{$vehicle->carModel}}">
                 <div class="card-body">
                         <h5 class="card-model">{{$vehicle->carModel}}</h5>
                         <p class="card-year">{{(date('d/m/Y', strtotime($vehicle->year)))}}</p>
