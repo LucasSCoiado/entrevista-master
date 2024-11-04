@@ -188,4 +188,11 @@ class TravelController extends Controller
         return view('show.vehicleShow', ['vehicle'=> $vehicle]);
     }
 
+    public function destroyVehicle($id){
+
+        Vehicles::findOrFail($id)->delete();
+        
+        return redirect('/veiculo')->with("msg", "Veículo excluido com sucesso!");
+
+    }
 }

@@ -31,3 +31,6 @@ Route::get('/register/vehicleRegister', [TravelController::class, 'vehicleRegist
 Route::post('/register', [TravelController::class, 'storeVehicle']);//enviar dados ao banco
 Route::post('/drivers', [TravelController::class, 'store']);//enviar dados ao banco
 Route::post('/travels', [TravelController::class, 'storeTravel']);//enviar dados ao banco
+
+//DELETE
+Route::delete('/veiculo/{id}', [TravelController::class, 'destroyVehicle']);
