@@ -157,7 +157,7 @@ class TravelController extends Controller
         //image Upload
         if($request->hasFile('image') && $request->file('image')->isValid()){
 
-            $requestImage = $request->imagem;
+            $requestImage = $request->image;
 
             $extension = $requestImage->extension();
             
@@ -165,7 +165,7 @@ class TravelController extends Controller
 
             $requestImage->move(public_path('/img/travel'), $imageName);
 
-            $register->imagem = $imageName;
+            $register->image = $imageName;
         }
 
         $register->save();
