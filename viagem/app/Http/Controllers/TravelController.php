@@ -195,4 +195,101 @@ class TravelController extends Controller
         return redirect('/veiculo')->with("msg", "Veículo excluido com sucesso!");
 
     }
+
+    public function destroyDriver($id){
+
+        Driver::findOrFail($id)->delete();
+        
+        return redirect('/motorista')->with('msg', "Apagado com sucesso");
+
+    }
+
+    public function destroyTravel($id){
+        
+        Travel::findOrFail($id)->delete();
+
+        return redirect('/viagem')->with('msg', 'Viagem apagada com sucesso!');
+
+    }
+
+    public function edit($id){
+
+        $driver = Driver::findOrFail($id);
+
+        return view('update.driverEdit',['driver'=>$driver]);
+
+    }
+
+    public function travelEdit($id){
+
+        $travel = Travel::findOrFail($id);
+
+        return view('update.travelEdit', ['travel'=>$travel]);
+
+    }
+
+    public function vehicleEdit($id){
+
+        $vehicle = Vehicles::findOrFail($id);
+
+        return view('update.vehicleEdit', ['vehicle'=>$vehicle]);
+
+    }
+
+    public function driverUpdate(Request $request){
+        $driver = $request->all();
+        //image upload
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+            $requestImage = $request->image;
+        
+            $extension = $requestImage->extension();
+        
+            $imageName = md5($requestImage->getClientOriginalName().strtotime("now")).".".$extension;
+        
+            $requestImage->move(public_path('/img/driver'), $imageName);
+        
+            $driver['image'] = $imageName;
+        }
+
+        Driver::findOrFail($request->id)->update($driver);
+
+        return redirect('/motorista')->with('msg', 'Dados salvos com sucesso!');
+    }
+
+    public function travelUpdate(Request $request){
+        $travel = $request->all();
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+            
+            $imageName = md5($requestImage->getClientOriginalName().strtotime("now")).".".$extension;
+
+            $requestImage->move(public_path('/img/travel'), $imageName);
+
+            $travel['image'] = $imageName;
+        }
+
+        Travel::findOrFail($request->id)->update($travel);
+        return redirect('/viagem')->with('msg', 'Dados salvos com sucesso!');
+    }
+
+    public function vehicleUpdate(Request $request){
+        $vehicle = $request->all();
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+            $requestImage = $request->image;
+        
+            $extension = $requestImage->extension();
+        
+            $imageName = md5($requestImage->getClientOriginalName().strtotime("now")).".".$extension;
+        
+            $requestImage->move(public_path('/img/vehicle'), $imageName);
+        
+            $vehicle['image'] = $imageName;
+        }
+
+        Vehicles::findOrFail($request->id)->update($vehicle);
+        return redirect('/veiculo')->with('msg', 'Dados salvos com sucesso!');
+    }
 }

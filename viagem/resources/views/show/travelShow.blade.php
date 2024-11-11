@@ -15,6 +15,14 @@
                 <p class="travel-car"><ion-icon name="bus-outline"></ion-icon> {{$travel->veiculo_id}}</p>
             </div>
         </div>
+        <td>
+            <a href="/viagem/travelEdit/{{$travel->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon> Editar</a>
+            <form action="/viagem/{{$travel->id}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash-outline"></ion-icon>Deletar</button>
+            </form>
+        </td>
     </div>
     
 @endsection

@@ -15,15 +15,15 @@
                 <p class="travel-car"><ion-icon name="trending-up-outline"></ion-icon> {{$vehicle->kmDriven}}</p>
                 <p class="travel-reinder"><ion-icon name="reader-outline"></ion-icon> {{$vehicle->reinder}}</p>
             </div>
-            <td>
-                <a href="#" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon> Editar</a>
-                <form action="/veiculo/{{$vehicle->id}}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash-outline"></ion-icon>Deletar</button>
-                </form>
-            </td>
         </div>
+        <td>
+            <a href="/veiculo/vehicleEdit/{{$vehicle->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon> Editar</a>
+            <form action="/veiculo/{{$vehicle->id}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash-outline"></ion-icon>Deletar</button>
+            </form>
+        </td>
     </div>
     
 @endsection

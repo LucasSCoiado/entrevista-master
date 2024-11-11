@@ -257,7 +257,16 @@ ul.navbar-nav-secondary li{
 
 #image-container img{
     border-radius: 10px;
+    max-height: 400px;
+    justify-content: center;
 }
+.img-preview{
+    width: 100px;
+    margin-top: 20px;
+}
+/*---Edit Page---*/
+
+
 
 /*---Footer---*/
 footer{
