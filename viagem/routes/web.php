@@ -50,3 +50,5 @@ Route::put('/viagem/travelUpdate/{id}', [TravelController::class, 'travelUpdate'
 
 Route::get('/veiculo/vehicleEdit/{id}', [TravelController::class, 'vehicleEdit']);
 Route::put('/veiculo/vehicleUpdate/{id}', [TravelController::class, 'vehicleUpdate']);
+
+//CHAVE ESTRANGEIRA

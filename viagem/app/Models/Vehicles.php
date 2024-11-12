@@ -9,4 +9,12 @@ class Vehicles extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function viagem(){
+        return $this->hasMany('App\Models\Viagem','vehicle_id', 'id');
+    }
+
+    public function travel(){
+        return $this->hasMany('App\Models\Travel', 'vehicle_id', 'id');
+    }
 }

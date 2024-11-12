@@ -19,7 +19,13 @@ return new class extends Migration
             $table->float('km_fim');
             $table->integer('motorista_id');
             $table->integer('veiculo_id');
+            $table->string('origem');
+            $table->string('destino');
+            $table->string('image');
             $table->timestamps();
+
+            $table->foreignId('motorista_id')->references('id')->on('drivers');
+            $table->foreignId('vehicle_id')->references('id')->on('travel');
         });
     }
 

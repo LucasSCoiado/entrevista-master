@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('driver', function (Blueprint $table) {
+        Schema::create('drivers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->date('birth');
             $table->integer('cnh');
+            $table->string('image');
             $table->timestamps();
         });
     }

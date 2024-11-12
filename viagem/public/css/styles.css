@@ -196,7 +196,7 @@ ul.navbar-nav-secondary li{
     border-top-right-radius: 10px;
 }
 
-.card .card-date, .card-year, .card-driver, .card-car, .card-cnh{
+.card .card-date, .card-year, .card-driver, .card-car, .card-cnh, .card-end, .card-travel{
     font-size:16px;
     color: #2b2a2a;
 }

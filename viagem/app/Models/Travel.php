@@ -10,4 +10,12 @@ class Travel extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function vehicles(){
+        return $this->belongsTo('App\Models\Vehicles', 'vehicle_id', 'id');
+    }
+
+    public function driver(){
+        return $this->belongsTo( 'App\Models\Driver', 'motorista_id', 'id');
+    }
 }

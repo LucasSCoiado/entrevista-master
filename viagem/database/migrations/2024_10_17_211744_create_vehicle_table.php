@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('acquisition');
             $table->float('kmDriven');
             $table->integer('reinder');
+            $table->string('image');
             $table->timestamps();
         });
     }

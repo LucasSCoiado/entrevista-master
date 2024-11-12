@@ -11,8 +11,10 @@
             </div>
             <div id="info-container" class="col-md-6">
                 <h1><ion-icon name="map-outline"></ion-icon> {{$travel->origem}} -> {{$travel->destino}}</h1>
-                <p class="travel-driver"><ion-icon name="person-outline"></ion-icon> {{$travel->motorista_id}}</p>
-                <p class="travel-car"><ion-icon name="bus-outline"></ion-icon> {{$travel->veiculo_id}}</p>
+                <p class="travel-driver"><ion-icon name="person-outline"></ion-icon> {{$travelOwner['name']}}</p>
+                <p class="travel-car"><ion-icon name="bus-outline"></ion-icon> {{$vehicleOwner['carModel']}}</p>
+                <p class="card-travel"><ion-icon name="globe-outline"></ion-icon> Origem: {{$travel->origem}}</pc>
+                <p class="card-travel"><ion-icon name="globe-outline"></ion-icon> Destino: {{$travel->destino}}</p>
             </div>
         </div>
         <td>

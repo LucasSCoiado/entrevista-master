@@ -7,16 +7,33 @@ use Illuminate\Http\Request;
 use App\Models\Vehicles;
 use App\Models\Driver;
 use App\Models\Travel;
+use App\Models\Viagem;
 use Carbon\Carbon;
 
 class TravelController extends Controller
 {
     
     public function index(){
-        $drivers= Driver::all();
-        $vehicles = Vehicles::all();
-        $travels = Travel::all();
-        return view('welcome', ['drivers'=>$drivers, 'travels'=>$travels,'vehicles'=>$vehicles]);
+
+        $search = request('search');
+
+        if($search){
+            $drivers = Driver::where([
+                ['name','like', '%'.$search.'%']
+            ])->get();
+            $vehicles = Vehicles::where([
+                ['carModel','like','%'.$search.'%']
+            ])->get();
+            $travels = Travel::where([
+                ['origem','like','%'.$search.'%']
+            ])->get();
+        }else{
+            $drivers= Driver::all();
+            $vehicles = Vehicles::all();
+            $travels = Travel::all();
+        }
+
+        return view('welcome', ['drivers'=>$drivers, 'travels'=>$travels,'vehicles'=>$vehicles, 'search'=>$search]);
     }
     public function vehicle(){
         $vehicles = Vehicles::all();
@@ -180,7 +197,12 @@ class TravelController extends Controller
 
     public function travelShow($id){
         $travel = Travel::findOrFail($id);
-        return view('show.travelShow', ['travel' => $travel]);
+
+        $travelOwner = Driver::where('id', $travel->motorista_id)->first()->toArray();
+
+        $vehicleOwner = Vehicles::where('id', $travel->veiculo_id)->first()->toArray();
+
+        return view('show.travelShow', ['travel' => $travel, 'travelOwner' => $travelOwner, 'vehicleOwner' => $vehicleOwner]);
     }
 
     public function vehicleShow($id){

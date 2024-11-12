@@ -13,4 +13,11 @@ class Driver extends Model
 
     protected $dates = ['birth'];
 
+    public function viagem(){
+        return $this->hasMany('App\Models\Viagem', 'motorista_id','id');
+    }
+
+    public function travel(){
+        return $this->hasMany('App\Models\Travel', 'motorista_id','id');
+    }
 }
