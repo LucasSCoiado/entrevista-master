@@ -314,4 +314,8 @@ class TravelController extends Controller
         Vehicles::findOrFail($request->id)->update($vehicle);
         return redirect('/veiculo')->with('msg', 'Dados salvos com sucesso!');
     }
+
+    public function pastTravel(){
+        
+    }
 }
