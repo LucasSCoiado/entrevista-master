@@ -77,11 +77,11 @@ header{
 
 #navbar a:hover{
     color:#fff;
-    transition-delay: 250ms;
+    transition-delay: 150ms;
     transition-property: color;
-    transition-duration: 250ms;
+    transition-duration: 150ms;
     background-color: #5e5c5c;
-    transition-behavior: 250ms;
+    transition-behavior: 150ms;
     border-radius: 10px;
 }
 
